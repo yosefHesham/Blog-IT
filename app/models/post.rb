@@ -1,5 +1,10 @@
 ## class Post
 class Post < ApplicationRecord
+  validates :title, presence: true
+  validates :title, length: { maximum: 250 }
+  validates :commentsCounter, numericality: { only_integer: true }
+  validates :likesCounter, numericality: { only_integer: true }
+
   belongs_to :auther, class_name: 'User', foreign_key: 'user_id'
   has_many :comment
   has_many :like
@@ -10,6 +15,6 @@ class Post < ApplicationRecord
   end
 
   def update_posts_counter
-    author.increment!(:posts_count)
+    author.increment!(:posts_counter)
   end
 end

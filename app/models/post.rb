@@ -1,8 +1,9 @@
 ## class Post
 class Post < ApplicationRecord
-  belongs_to :user, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :auther, class_name: 'User', foreign_key: 'user_id'
   has_many :comment
   has_many :like
+  after_save :update_posts_counter
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)

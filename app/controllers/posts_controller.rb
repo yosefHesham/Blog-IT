@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.find(params[:id])
+    puts @post.inspect
   end
 
   def set_user

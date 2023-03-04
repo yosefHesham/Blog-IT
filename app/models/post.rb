@@ -2,10 +2,10 @@
 class Post < ApplicationRecord
   validates :title, presence: true
   validates :title, length: { maximum: 250 }
-  validates :commentsCounter, numericality: { only_integer: true }
-  validates :likesCounter, numericality: { only_integer: true }
+  validates :comments_counter, numericality: { only_integer: true }
+  validates :likes_counter, numericality: { only_integer: true }
 
-  belongs_to :auther, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   has_many :comment
   has_many :like
   after_save :update_posts_counter

@@ -6,8 +6,8 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true }
 
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
-  has_many :comment
-  has_many :like
+  has_many :comments
+  has_many :likes
   after_save :update_posts_counter
 
   def recent_comments

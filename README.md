@@ -21,11 +21,9 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [🙏 LICENSE ](#-license-)
 
-
 # 📖 Catalog of my things <a name="about-project"></a>
 
 **Blog It** In this project we gonna use ROR and html,css to create our blog website, which enable users to post, like, comment and share their ideas.
-
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -56,6 +54,7 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ### Getting Started <a name="getting-started"></a>
 
 ### Prerequisites
@@ -72,7 +71,7 @@ Example commands:
   rails server
 ```
 
-test 
+test
 
 ```
   rspec
@@ -84,12 +83,17 @@ test
 
 ## 👥 Authors <a name="authors"></a>
 
-
 👤 **Yousef Hesham**
 
 - GitHub: [@yosefHesham](https://github.com/yosefHesham)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/yousef-hesham98)
 - Twitter: [@yousef](https://twitter.com/Yousef45653478)
+
+👤 **Amanuel Galema**
+
+- GitHub: [@amexabee](https://github.com/amexabee)
+- Twitter: [@i_amanuel](https://twitter.com/i_amanuel)
+- LinkedIn: [Amanuel Galema](https://linkedin.com/in/amanuel-galema)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,8 +101,7 @@ test
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [Create API ] 
-
+- [Create API ]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

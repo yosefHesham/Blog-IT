@@ -1,13 +1,17 @@
-  
-  <div class="posts">
-    <%= render partial: "shared/user", locals: { user: @user } %>
-    <% @posts.each do |post| %>
-      <%= link_to user_post_path(@user, post), class: "post" do %>
-        <%= render "shared/post", post: post %>
-        <div class="comments">
-          <%= render "shared/comment", post: post %>
-        </div>
-      <% end %>
-    <% end %>
-    <button type="button" class="btn">Pagination</button>
-  </div>
+<%= render partial: "users/username", locals: { user: @posts[0].author} %>
+<ul class='user-posts'>
+<% @posts.each_with_index do |post| %>
+  <li>
+  <%link = "posts/#{post.id}"%>
+  <a href=<%=link%>>
+  <h3><%=post.title%></h3>
+  <h4>Post #<%=post.id%></h4>
+  <p><%=post.text%></p>
+  <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
+  </a>
+  </li>
+  <%= render partial: "comment", locals: {comments: post.recent_comments} %>
+<% end %>
+<button>Pagination</button>
+<%= link_to "Create a new post", new_user_post_path(current_user) %>
+</ul>

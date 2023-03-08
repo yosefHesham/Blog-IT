@@ -10,7 +10,7 @@
   <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
   </a>
   </li>
-  <%= render partial: "comment", locals: {comments: post.five_recent_comments} %>
+  <%= render partial: "comment", locals: {comments: post.recent_comments} %>
 <% end %>
 <button>Pagination</button>
 <%= link_to "Create a new post", new_user_post_path(current_user) %>

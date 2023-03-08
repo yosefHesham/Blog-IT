@@ -1,19 +1,17 @@
-<div class="single_user">
-  <%= render "shared/user", user: @user %>
-  <div class="bio border-black ">
-    <h3>Bio</h3>
-    <p><%= @user.bio %></p>
-  </div>
-
-  <div class="posts">
-    <% @recent_posts.each do |post| %>
-      <%= render "shared/post", post: post %> 
-    <% end %>
-  </div>
-
-  <button type="button" class="btn">
-    <%= link_to "See All Posts", user_posts_path(@user) %>
-  </button>
-
-  <button type="button" class="btn"><%= link_to "Create a post", new_user_post_path(@user)  %></button>
+<%= render partial: "username", locals: { user: @user } %>
+<div>
+<h3>Bio</h3>
+<p><%=@user.bio%></p>
 </div>
+<ul class='user-posts'>
+<% @user.recent_posts.each_with_index do |post| %>
+  <li>
+  <a  href=<%="#{@user.id}/posts/#{post.id}"%>><%=post.title%></a>
+  <h4>Post #<%=post.id%></h4>
+  <p><%=post.text%></p>
+  <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
+  </li>
+<% end %>
+<%link = "#{@user.id}/posts"%>
+<button><a href=<%=link%>>Show All Posts</a></button>
+</ul>

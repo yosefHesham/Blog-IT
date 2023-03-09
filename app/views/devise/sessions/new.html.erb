@@ -1,0 +1,18 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ <div class="sign-in">
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Your Email'%>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password'%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+   <div>
+    <span> Dont have an account ? </span> <%= link_to "Sign up", new_user_registration_path %>
+  </div>
+ </div>
+<% end %>

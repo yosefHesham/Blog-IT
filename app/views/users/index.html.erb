@@ -1,3 +1,12 @@
+
+<section class="wrapper"> 
+<% if user_signed_in? %>
+  Logged in as <%= current_user.email %>.
+  <article><%= link_to 'Edit profile', edit_user_registration_path %></article>
+  <article><%= button_to 'Sign out', destroy_user_session_path, method: :delete %></article> 
+<% else %>  
+    <%= link_to "Log in", new_user_session_path, class: "link-login"%>
+<% end %>
 <ul class='users-list'>
 <% @users.each do |user| %>
   <li>
@@ -8,3 +17,5 @@
 </li>
 <% end %>
 </ul>
+
+</section>

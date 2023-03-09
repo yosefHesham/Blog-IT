@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Post index test', type: :feature do
   before :each do
-    @user = User.create(name: 'Yousef', bio: 'Front end Engineer', posts_counter: 0)
+    @user = User.create(name: 'Yousef', bio: 'Front end Engineer', posts_counter: 0, email: 'yousef@yahoo.com',
+                        password: '02222222222222222')
     @post = Post.create(author: @user, title: 'Hello', text: 'Hi there', comments_counter: 0, likes_counter: 0)
     @comment = Comment.create(post: @post, author: @user, text: 'Hi')
     visit user_post_path(@user.id, @post.id)

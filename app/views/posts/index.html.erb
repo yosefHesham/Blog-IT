@@ -13,5 +13,5 @@
   <%= render partial: "comment", locals: {comments: post.recent_comments} %>
 <% end %>
 <button>Pagination</button>
-<%= link_to "Create a new post", new_user_post_path(@user.id) %>
+<%= link_to "Create a new post", new_user_post_path(current_user) %>
 </ul>

@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'User index test', type: :feature do
   before :each do
-    @first_user = User.create(name: 'Yousef', bio: 'Front end Engineer', posts_counter: 0)
+    @first_user = User.create(name: 'Yousef', bio: 'Front end Engineer', posts_counter: 0, email: 'yousef@yahoo.com',
+      password: '02222222222222222')
     @first_post = Post.create(author: @first_user, title: 'Hello World !', text: 'World is ugly')
     @second_post = Post.create(author: @first_user, title: 'Hello!', text: 'World is ugly')
     @third_post = Post.create(author: @first_user, title: 'Hello everyone!', text: 'World is ugly')

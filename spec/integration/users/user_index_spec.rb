@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'User index test', type: :feature do
   before :each do
-    @first_user = User.create(name: 'Yousef', bio: 'Front end Engineer', posts_counter: 4)
-    @second_user = User.create(name: 'Amanuel', bio: 'Student', posts_counter: 5)
+    @first_user = User.create(name: 'Yousef', bio: 'Front end Engineer', posts_counter: 4, email: 'yousef@yahoo.com',
+                              password: '02222222222222222')
+    @second_user = User.create(name: 'Amanuel', bio: 'Student', posts_counter: 5, email: 'amanuel@yahoo.com',
+                               password: '02222222222222222')
     visit users_path
   end
 
